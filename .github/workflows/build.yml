@@ -12,6 +12,7 @@ concurrency:
 
 jobs:
   build_android:
+    name: Build Android
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -24,6 +25,7 @@ jobs:
       - name: Build Android
         run: ./gradlew androidApp:assembleDebug
   build_ios:
+    name: Build iOS
     runs-on: macos-latest
     steps:
       - name: Checkout code
