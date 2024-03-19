@@ -6,10 +6,22 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.compose")
     alias(libs.plugins.sqldelight)
+    alias(libs.plugins.kotlinNativeCocoapods)
 }
 
 kotlin {
     androidTarget()
+
+    cocoapods {
+        ios.deploymentTarget = "14.1"
+        version = "1.0.0"
+        summary = "Shared module of Marvel Champions Companion"
+        homepage = "https://github.com/schachi5000/marvel-champions-companion"
+        framework {
+            baseName = "shared"
+            isStatic = true
+        }
+    }
 
     listOf(
         iosX64(),
