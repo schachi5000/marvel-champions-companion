@@ -33,5 +33,9 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '17'
+      - name: Setup Cocoapods
+        uses: maxim-lobanov/setup-cocoapods@v1
+        with:
+          podfile-path: iosApp/Podfile.lock
       - name: Build iOS
         run: xcodebuild -allowProvisioningUpdates -workspace iosApp/iosApp.xcodeproj/project.xcworkspace -configuration Debug -scheme iosApp -sdk iphoneos -destination name='iPhone 14' build
